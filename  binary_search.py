@@ -1,6 +1,3 @@
-mylist = [10, 12, 13, 15, 20, 24, 27, 33, 42, 51, 57, 68, 70, 77, 79, 81]
-
-
 def search(mylist, target, smallest, biggest):
     if smallest > biggest:
         return False
@@ -14,12 +11,13 @@ def search(mylist, target, smallest, biggest):
             return search(mylist, target, midle + 1, biggest)
 
 
-mylist = [10, 12, 13, 15, 20, 24, 27, 33, 42, 51, 57, 68, 70, 77, 79, 81]
-target = 1
+user_input = input("Введите список элементов, в формате - 1,2,3: ")
+list = list(map(float, user_input.split(',')))
+target = float(input("Введите число из списка, индекс которого вам нужен:"))
 smallest = 0
-biggest = len(mylist)
+biggest = len(list)
 
-x = search(mylist, target, smallest, biggest)
+x = search(list, target, smallest, biggest)
 
 if not x:
     print("Item", target, "Not found")
